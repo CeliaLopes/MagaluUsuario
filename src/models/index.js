@@ -6,20 +6,20 @@ const Produtos = require('./produtos');
 const Lista = require('./lista');
 const Categorias = require('./categorias');
 const Lojas = require('./lojas');
-const Endereco = require('./endereco');
+//const Endereco = require('./endereco');
 
 
 const usuario = Usuario(sequelize, Sequelize.DataTypes);
 const produtos = Produtos(sequelize, Sequelize.DataTypes);
 const lista = Lista(sequelize, Sequelize.DataTypes);
 const categorias = Categorias(sequelize, Sequelize.DataTypes);
-const endereco = Endereco(sequelize, Sequelize.DataTypes);
+//const endereco = Endereco(sequelize, Sequelize.DataTypes);
 const lojas = Lojas(sequelize, Sequelize.DataTypes);
 
 //Verificar!!!
 //RELACIONAMENTO DE TABELAS:
 produtos.belongsTo(categorias);
-endereco.hasMany(usuario);
+//endereco.hasMany(usuario);
 lojas.hasMany(lista);
 
 //alterado, tabela pivô
@@ -32,7 +32,6 @@ const db = {
     produtos,
     lista,
     categorias,
-    endereco,
     lojas,
     sequelize
 };
